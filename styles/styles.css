@@ -1,0 +1,505 @@
+body{
+     background-image: url("../assets/library-background.avif");  
+}
+#welcomeImg-container{
+     width: 100%;
+     display: flex;
+     justify-content: center; 
+     align-items: center;
+}
+#welcomeImg-container img{
+     width: 90%;
+     opacity: 0.9;
+}
+header{
+     background-color: rgb(0, 0, 0);
+     width: 80%;
+     margin: auto;
+     border-right: 1px solid gray;
+     border-left: 1px solid gray;
+}
+header ul{
+     display: flex;
+     flex-direction: row;
+     gap: 18px;
+     height: 10vh;
+     align-items: center;
+     padding-left:16px;
+    
+}
+header ul li a{
+     color:rgb(225, 218, 218);
+     font-size: 20px;
+}
+header ul li a:hover{
+     color: orange;
+     font-size: 22px;
+     transition: all .5s ease;
+}
+
+#wrapper{
+     width: 80%;
+     display: flex;
+     flex-direction: column;
+     margin: auto;
+     min-height: 80vh;
+     height: fit-content;
+     border-right: 1px solid gray;
+     border-left: 1px solid gray;
+}
+
+#main-section{
+     width: 100%;
+     height: 100vh;
+     overflow-y: scroll;
+     font-size: 22px;    
+}
+
+#search-container{
+     padding-bottom: 18px;
+     background-color: black;   
+     border-bottom: 2px solid gray;
+     border-right: 1px solid gray;
+     border-left: 1px solid gray;
+     width: 80%;
+     margin: auto;
+     font-size: larger;
+
+}
+#search-container h2,form{
+     text-align: center;
+     
+     padding-bottom: 12px;   
+}
+#search{
+   border: none;
+   width: 40%;
+   text-align: center;
+   border: none;
+   background-color: rgb(149, 88, 2);
+   font-size: 20px;
+   font-style: bold;
+   color:black;
+   height:40px;  
+   line-height: 40px; 
+   margin-right: 0px;
+   outline: none;
+   
+}
+#search:focus{
+     background-color: rgb(254, 131, 0);  
+}
+#search:not(:focus){
+    color: white;
+}
+#search::placeholder{
+   color:black;
+   opacity: 0.5;
+}
+/* placeholder good fix */
+#search:not(:focus)::placeholder{
+     color: white;
+     font-size: 16px;
+     opacity: 0.6;
+}
+
+#searchBy{
+     width: fit-content;
+     height: 30px;
+     font-size: 18px;
+     padding-left: 6px;
+     padding-right:6px;
+     background-color: rgb(105, 105, 105);
+     outline: none;
+     font-weight: 600;
+     color: white;
+    
+}
+#searchBtn{
+     margin-left: 0px;
+     background-color: #1481c9;
+     width: 150px;
+     font-size: 18px;
+     border: none;
+     height:40px;  
+     line-height: 40px;
+     cursor: pointer;
+     color: white;
+     font-size: 22px;
+}
+#searchBtn:hover{
+     background-color: #0b5e96;
+}
+
+/* _________________________________ */
+.cards-container{
+     background-color: black;
+     width: 100%;
+     min-height: 80vh;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     padding-top: 18px;
+     padding: 20px;
+     padding-bottom: 15vh;
+     gap: 50px 32px;
+     /* border-right: 1px solid gray;
+     border-left: 1px solid gray; */
+}
+
+@media only screen and (max-width: 870px) {
+     .cards-container{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+   }
+
+   @media only screen and (max-width: 440px) {
+     .card{
+        zoom:0.7;
+     }
+   }
+
+/* CARD _________________________________________________ */
+.card{
+     width: 300px;
+     height: 700px;
+     display: flex;
+     flex-direction: column;
+     border: 2px solid rgb(193, 193, 193);
+     position: relative;
+}
+.card-img{
+     width:296px;
+     height: 400px;   
+}
+.card-text{
+     width: 100%;
+     height: 170px;
+     overflow-y: auto;
+     padding-bottom: 50px;
+    /* ? some fetched card gts problem with description*/
+    word-break: break-word;
+    text-overflow: clip;
+}
+.card-title-desc{
+     height: 270px;
+}
+
+.card-title{
+     padding-top: 10px;
+     padding-bottom: 10px;
+     font-size: 22px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     background-color: rgb(94, 93, 93);
+     text-align: center;  
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+/* !!!!!!!!!!!!fix for long titles */
+.card-title:hover{
+     white-space: normal;
+     word-break: break-word;
+     text-overflow: clip;
+}
+
+.card-author-year{
+     position: absolute;
+     bottom: 28px;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     background-color: rgb(94, 93, 93);
+     padding-bottom: 6px;
+     padding-top: 0px;
+}
+/* card-button (*container) */
+.card-buttons{ 
+     display: flex;
+     flex-direction: row;
+     background-color: rgb(94, 93, 93);
+     position: absolute;
+     bottom:0px;
+     width: 100%;
+     height: 28px;
+}
+.card button{
+     width: 50%;
+     height: 100%;
+     font-size: 18px;
+     background-color: rgb(17, 123, 210);
+     border: none;
+     color:white;  
+}
+.card button{
+     width: 50%;
+     height: 100%;
+     font-size: 18px;
+     background-color: rgb(17, 123, 210);
+     border: none;
+     color:white;  
+}
+
+.card button:hover{
+     background-color: rgb(59, 160, 243);
+     cursor: pointer;
+}
+/* disabled  */
+.cardFavBtn:disabled{
+     width: 50%;
+     height: 100%;
+     font-size: 18px;
+     background-color: rgb(72, 82, 90);
+     border: none;
+     color:white;  
+     opacity: 0.5;
+     cursor: default !important;
+}
+.annotation-container{
+     background-color: rgb(0, 0, 0);
+     position: absolute;
+     top:-30px;
+     right: -12px; 
+     z-index: 300;
+}
+.annotation-btn{
+     border: 2px solid white;
+     background-color: transparent !important;
+}
+.annotation-btn:hover{
+    cursor: pointer !important;
+    color: red;
+    zoom: 1.1;
+}
+/* MODAL annotation __________________________________________ */
+.modal{
+     width: 100%;
+     height: 700px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 100;
+     background-color: black;
+     opacity: 0.9;
+     gap: 10px 12px;
+     display: flex;
+     flex-direction: column; 
+     visibility: hidden;
+     
+}
+.add-ann-btn-container{
+     width: 100%;
+     height: 30px;
+}
+.addAnnBtn{
+    text-align: center;
+    width: 100% !important;
+}
+.modal-content-wrapper{
+     margin-top: 18px;
+     display: flex;
+     flex-direction: column;
+     gap: 30px 10px;
+     overflow-y: auto;
+}
+.modal-content{
+     display: flex;
+     border: 2px solid gray;
+     flex-direction: row;
+     min-height: 150px;
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+}
+.modal-date{
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     width:30%;
+     font-size: 14px;
+     padding: 6px;
+     border-right: 1px solid gray;
+}
+.modal-date p{
+     margin-bottom: 6px;
+     border-bottom: 1px solid gray;
+}
+.modal-text{
+     display: flex;
+     flex-direction: column;
+     flex-direction: column;
+     height: 150px;
+     max-height: 150px;
+     width: 74%;
+     position: relative;
+     overflow: auto;
+     padding-left: 14px;
+     padding-right: 14px;
+     word-break: break-word; 
+     
+}
+.modal-text h6{
+     font-size: 18px;
+     text-align: center;
+     font-weight: 700;
+     padding-bottom: 14px;
+}
+.modal-buttons-container{
+     display: flex;
+     flex-direction: row;
+     /* height: 20px; */
+     width: 100%;
+     font-size: 10px;
+     position: absolute;
+     bottom:0;
+     left: 0;
+}
+/* ann FORM container ____________________________________________ */
+.ann-form-container{
+     position: fixed;
+     width: 40%;
+     height: 80vh;
+     z-index: 300;
+     border: 2px solid orange;
+     background-color: rgb(2, 39, 2);
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 16px 25px;
+     font-size: 20px;
+     
+}
+.ann-form{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 16px 25px;
+     width: 80%;
+}
+
+.ann-form input,textarea{
+     width: 100%;
+     background-color: rgb(55, 48, 48);
+     color: white;
+     outline: none;
+     border: none;
+}
+.ann-form-btn{
+     width: 120px !important;
+     height: 30px !important;
+     background-color: #0564a3;
+     color: white;
+     font-size: 22px;
+}
+.ann-form-btn:hover{
+     cursor: pointer;
+     background-color: #2283c3;
+}
+.close-modal-form{
+     position: fixed;
+     right: 10px;
+     top: 10px;
+     color: white;
+     padding: 2px 4px 2px 4px;
+     font-weight: 700;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     border: 1px solid white;
+     background-color: rgb(189, 5, 5);
+}
+.close-modal-form:hover{
+     cursor: pointer;
+}
+
+
+/* Pegination styles ______________________________________________*/
+#pagination-container{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     background-color: black;
+     padding-left: 16px;
+     padding-right: 16px;
+     padding-top:8px;
+     padding-bottom:16px;
+}
+#pagination-container button{
+     background-color: rgb(184, 183, 183);
+}
+
+/* not found div  ERROR PAGE*/
+.notFound{
+     padding-top: 10vh;
+     width: 100%;
+     height: 80vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color: red;
+     font-size: 40px;
+}
+@media only screen and (max-width: 800px) {
+     .notFound{
+          zoom: 0.7;
+     }
+   }
+
+
+/* loader spiner */
+.loader-container{
+     background-color: black;
+     width: 100%;
+     height: 80vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* display: none; */
+}
+.loader {
+     border: 16px solid #f3f3f3;
+     border-radius: 50%;
+     border-top: 16px solid #1481c9;
+     width: 100px;
+     height: 100px;
+     -webkit-animation: spin 2s linear infinite; /* Safari */
+     animation: spin 1s linear infinite;
+   }
+   
+   /* Safari */
+   @-webkit-keyframes spin {
+     0% { -webkit-transform: rotate(0deg); }
+     100% { -webkit-transform: rotate(360deg); }
+   }
+   
+   @keyframes spin {
+     0% { transform: rotate(0deg); }
+     100% { transform: rotate(360deg); }
+   }
+
+ footer{  
+     height: 5vh;
+     position: fixed;
+     background-color: black;
+     opacity: 0.7;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position:fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     width: 80%;
+     margin: 0 auto;
+     border-right: 1px solid gray;
+     border-left: 1px solid gray;
+ }
+

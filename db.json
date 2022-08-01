@@ -1,0 +1,190 @@
+{
+  "annotations": [
+    {
+      "title": "Some test annnotations",
+      "content": "Some test annotations text",
+      "timeOfCreation": "7/24/2022, 4:45:55 PM",
+      "timeOFEdit": "7/24/2022, 6:41:46 PM",
+      "book": "Bm8Z3-7aAjYC",
+      "id": 2
+    },
+    {
+      "title": "Very useful reading",
+      "content": "This book change my life.",
+      "timeOfCreation": "7/24/2022, 5:02:46 PM",
+      "timeOFEdit": "7/24/2022, 5:02:46 PM",
+      "book": "fgI3DwAAQBAJ",
+      "id": 3
+    },
+    {
+      "title": "Love it",
+      "content": "Great book! I love it!",
+      "timeOfCreation": "7/24/2022, 5:03:20 PM",
+      "timeOFEdit": "7/24/2022, 6:40:50 PM",
+      "book": "T7-bDwAAQBAJ",
+      "id": 4
+    },
+    {
+      "title": "I recommend it",
+      "content": "Super",
+      "timeOfCreation": "7/24/2022, 5:04:17 PM",
+      "timeOFEdit": "7/24/2022, 6:41:11 PM",
+      "book": "T7-bDwAAQBAJ",
+      "id": 5
+    },
+    {
+      "title": "True story",
+      "content": "true story ...",
+      "timeOfCreation": "7/24/2022, 5:06:35 PM",
+      "timeOFEdit": "7/24/2022, 5:06:35 PM",
+      "book": "0P5TtgEACAAJ",
+      "id": 6
+    },
+    {
+      "title": "Love it",
+      "content": "Now I love the DEAD cats more than the OTHERS. :D",
+      "timeOfCreation": "7/24/2022, 5:12:26 PM",
+      "timeOFEdit": "7/24/2022, 5:25:49 PM",
+      "book": "ZXa-wB-A7woC",
+      "id": 7
+    },
+    {
+      "title": "This changed my kitty's life",
+      "content": "This changed my kitty's life for better!",
+      "timeOfCreation": "7/24/2022, 5:13:59 PM",
+      "timeOFEdit": "7/24/2022, 5:13:59 PM",
+      "book": "kmTEDQAAQBAJ",
+      "id": 8
+    },
+    {
+      "title": "got some Q",
+      "content": "Who should be dummy, the dog or I?",
+      "timeOfCreation": "7/24/2022, 5:15:53 PM",
+      "timeOFEdit": "7/24/2022, 5:16:40 PM",
+      "book": "fgI3DwAAQBAJ",
+      "id": 9
+    },
+    {
+      "title": "Really important topic",
+      "content": "Can I use it for little honey badgers???",
+      "timeOfCreation": "7/24/2022, 5:20:24 PM",
+      "timeOFEdit": "7/24/2022, 5:35:43 PM",
+      "book": "kmTEDQAAQBAJ",
+      "id": 10
+    },
+    {
+      "title": "Not bad, not bad",
+      "content": "Pussy Riot and Green peace like it.",
+      "timeOfCreation": "7/24/2022, 5:22:58 PM",
+      "timeOFEdit": "7/24/2022, 5:22:58 PM",
+      "book": "ZXa-wB-A7woC",
+      "id": 11
+    },
+    {
+      "title": "The loved book of each feminist",
+      "content": "Xo xo xo",
+      "timeOfCreation": "7/24/2022, 5:28:21 PM",
+      "timeOFEdit": "7/24/2022, 5:28:21 PM",
+      "book": "Zt46lQEACAAJ",
+      "id": 12
+    },
+    {
+      "title": "test",
+      "content": "test1",
+      "timeOfCreation": "7/24/2022, 6:38:01 PM",
+      "timeOFEdit": "7/24/2022, 6:42:00 PM",
+      "book": "a1Z8DwAAQBAJ",
+      "id": 13
+    },
+    {
+      "title": "111",
+      "content": "111",
+      "timeOfCreation": "8/1/2022, 4:34:35 PM",
+      "timeOFEdit": "8/1/2022, 4:34:35 PM",
+      "book": "I8HU_3ycrrEC",
+      "id": 14
+    },
+    {
+      "title": "111",
+      "content": "222",
+      "timeOfCreation": "8/1/2022, 5:39:17 PM",
+      "timeOFEdit": "8/1/2022, 5:39:23 PM",
+      "book": "I8HU_3ycrrEC",
+      "id": 15
+    }
+  ],
+  "favourites": [
+    {
+      "id": "T7-bDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Dog Is Love",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=T7-bDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "description": "A pioneering canine behaviorist draws on cutting-edge research to show that a single, simple trait--the capacity to love--is what makes dogs such perfect companions for humans, and to explain how we can better reciprocate their affection.",
+        "authors": "author: Clive D. L. Wynne",
+        "publishedDate": "year: 2019"
+      }
+    },
+    {
+      "id": "fgI3DwAAQBAJ",
+      "volumeInfo": {
+        "title": "Dog Training For Dummies",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=fgI3DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "description": "Make training fun and effective This friendly guide shows you how to select the right training method for your dog, based on his unique personality, to reach your desired goals. Whether you want to teach Buddy to sit or master retrieving, you'll get expert training tips and techniques for you and your dog — to ensure a mutually respectful relationship with your four-legged friend. Concentrate on canines — discover why your dog acts the way she does, understand her nutritional needs, and ready yourself for the task of training your dog Prep for your pup — prepare your home for your puppy's arrival, discover the importance of socialization, and get started on housetraining Put your best paw forward — teach basic commands like Sit, Stay, and Down, and get the scoop on how to deal with doggie don'ts like chewing, digging, and excessive barking Take training to the next level — get involved in organized dog activities and competitions, where you'll both show off impressive tricks like retrieving, figure 8s, and much more Open the book and find: Step-by-step instructions for teaching your dog basic commands Helpful advice on crate training Safe ways to address aggression and separation anxiety Tips for teaching Buddy to behave himself around people and other dogs Techniques to keep your senior dog feeling young Health issues that can interfere with training Experts to turn to for training help Learn to: Use positive reinforcement as an effective teaching tool Select the gear you need for training success Teach the basics including Sit, Stay, and Down Eliminate unwanted behavior",
+        "authors": "author: Jack Volhard, Wendy Volhard",
+        "publishedDate": "year: 2010"
+      }
+    },
+    {
+      "id": "0P5TtgEACAAJ",
+      "volumeInfo": {
+        "title": "Do You Look Like Your Dog?",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=0P5TtgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "description": "Pair up the dogs with their owners in this hilarious card game. 50 cards depict fun photographs of the dogs and owners, and humorous texts are included in the booklet to provide clues about 25 people and their furry best friends. Why DO people look like their dogs? Is it shared personality traits, barely suppressed narcissistic tendencies, or do they grow together over time like old married couples? This game explores the intense bonds we develop with our dogs, which are far from only skin, or even fur, deep. Play as a memory game with the cards face down for added entertainment. Collect the most pairs to win! This is the perfect gift for dog lovers.",
+        "authors": "author: -",
+        "publishedDate": "year: 2018"
+      }
+    },
+    {
+      "id": "ZXa-wB-A7woC",
+      "volumeInfo": {
+        "title": "101 Uses for a Dead Cat",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=ZXa-wB-A7woC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "description": "Darkly humorous cartoons show a variety of facetious uses for a deceased pet",
+        "authors": "author: Simon Bond",
+        "publishedDate": "year: 1981"
+      }
+    },
+    {
+      "id": "kmTEDQAAQBAJ",
+      "volumeInfo": {
+        "title": "How to Toilet Train Your Cat",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=kmTEDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "description": "Follow this foolproof 21-day program and you can teach any litter-trained cat to use a toilet instead of a box. Discover a better way: Now cat owners everywhere can put down their scoops, stop ferrying backbreaking sacks of litter, enjoy a fresh-smelling home, and save hundreds of dollars a year. And make their cats happier, too! The requirements are simple: magazines or newspapers, masking tape, heavy-duty plastic wrap, a supply of litter, and a cat between the ages of six months and ten years (you can train an older cat, but it may take longer). Then, 21 days later, your cat will be using the toilet, just like any other civilized member of the family. For life. Toilet training a cat isn’t just for the owner’s convenience. Many cats equate the smell of the litter box with danger, causing constant stress, and the fragrances, dyes, and disinfectants found in most litters are detrimental to your pet’s well-being. Yes, it’s true: A toilet-trained cat is a happier, healthier cat.",
+        "authors": "author: Paul Kunkel",
+        "publishedDate": "year: 2017"
+      }
+    },
+    {
+      "id": "Zt46lQEACAAJ",
+      "volumeInfo": {
+        "title": "Men Are Better Than Women",
+        "imageLinks": {
+          "thumbnail": "http://books.google.com/books/content?id=Zt46lQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "description": "Through a process of exhaustive man research he calls \"keeping his eyes open,\" Dick Masterson has compiled a Magnum-size list of the ways men are better than women. It is an infallible compendium of man's greatness, filled with the most egregiously fallacious arguments ever put to words, but with some kind of miraculous, rock-solid man logic dripping like motor oil from every sentence. It is a manifesto more memorable than bullshit like High Fidelity or which Axe baby powder Maxim thinks you should slap on your nuts before clubbing, more chock-full of devastating man quotes than Oscar Wilde with two wangs. Most important, it is the only one of its kind. In Men Are Better Than Women, Dick Masterson dispenses logic from his man mouth into the eyes of his male readers like some kind of mighty mother man eagle with nutrient-rich word vomit. It's a book that makes you feel like driving a train into a dynamite factory and then tearing a telephone book apart with your bare hands, just because that's the way men have always done it. Masterson's chapters are simple and self-contained, demand no commitments from readers, and have an immediate payoff. Men Are Better Than Women is a dangerous work of satire -- not dangerous in a revolutionary sense, but dangerous in that it walks the razor-thin line between cruelty and absurdity. That line is called hilarious.",
+        "authors": "author: Dick Masterson",
+        "publishedDate": "year: 2008"
+      }
+    }
+  ]
+}

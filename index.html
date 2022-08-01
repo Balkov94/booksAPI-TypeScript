@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="styles/reset.css">
+     <link rel="stylesheet" href="styles/styles.css">
+     <link rel="stylesheet" href="styles/favourites.css">
+
+     <title>n.Balkov- google Books API</title>
+</head>
+
+<body>
+     <header>
+          <ul>
+               <li>
+                    <a href="#Home">Home</a>
+               </li>
+               <li>
+                    <a href="#Favourites" id="favourites-link">Favourites</a>
+               </li>
+               <li>
+                    <a href="https://developers.google.com/books/docs/v1/using#PerformingSearch" target="_blank">Google
+                         Book Api - documentation</a>
+               </li>
+
+          </ul>
+     </header>
+
+     <div id="search-container">
+          <h2>Search book by
+               <select name="searhcBy" id="searchBy">
+                    <option value="title" name="searhcBy" selected>title</option>
+                    <option value="author" name="searhcBy">author</option>
+                    <option value="publisher" name="searhcBy">publisher</option>
+               </select>
+
+          </h2>
+          <form action="submit">
+               <input type="text" name="search" id="search" required autocomplete="off" autofocus
+                    placeholder="enter your text here">
+               <input type="button" value="search" id="searchBtn">
+
+          </form>
+     </div>
+
+     <div id="favourites" class="favourites-style">
+          <div id="fav-page-title-container">
+               <h1>Favourites <span>&#10084;</span></h1>
+          </div>
+          <div class="cards-container-fav">
+               <div class="fav-empty-container">
+                    <h1>Favourites page is empty</h1>
+               </div>
+               <!-- <div class="card">
+                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/91w+VNB7wwL.jpg"
+                         alt="Card image cap">
+                    <div class="card-title-desc">
+                         <h5 class="card-title" data-test="test">
+                              Example card
+                         </h5>
+                         <p class="card-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                              Incidunt excepturi nulla officia ad esse sit modi dolor
+                              voluptatem eum
+                              praesentium ipsam provident commodi culpa, animi omnis
+                              , voluptas
+                              sint ut explicabo?
+                         </p>
+                    </div>
+                    <ul class="card-author-year">
+                         <li class="list-group-item">author: - </li>
+                         <li class="list-group-item">year: - </li>
+                    </ul>
+                    <div class="card-buttons">
+                         <button>Like</button>
+                         <button>Dislike</button>
+                    </div>
+               </div> -->
+               <!-- fetching data from JSON server  -->
+
+          </div>
+     </div>
+
+     <div id="wrapper">
+          <div id="pagination-container">
+               <div>Results: <span id="resultNum">0</span></div>
+               <div>Page:
+                    <button id="prevPage">&lt;</button>
+                    <span id="pageNum" data-index='0'>1</span>
+                    <button id="nextPage">&gt;</button>
+               </div>
+          </div>
+
+          <div class="cards-container">
+               <div id="welcomeImg-container">
+                    <img src="assets/welcomeimg2.jpg" alt="welcomeImg">
+               </div>
+               <!--<div class="card">
+                    <img class="card-img" src="https://images-na.ssl-images-amazon.com/images/I/91w+VNB7wwL.jpg"
+                         alt="Card image cap">
+                    <div class="card-title-desc">
+                         <h5 class="card-title" data-test="test">
+                              Example card
+                         </h5>
+                         <p class="card-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                              Incidunt excepturi nulla officia ad esse sit modi dolor
+                              voluptatem eum
+                              praesentium ipsam provident commodi culpa, animi omnis
+                              , voluptas
+                              sint ut explicabo?
+                         </p>
+                    </div>
+                    <ul class="card-author-year">
+                         <li class="list-group-item">author: - </li>
+                         <li class="list-group-item">year: - </li>
+                    </ul>
+                    <div class="card-buttons">
+                         <button>add to favourites</button>
+                          <button>Dislike</button>
+                    </div>
+                    <div class="annotation-container">
+                         <button class="annotation-btn" id="test">annotations</button>
+                    </div>
+                    modal
+                    for id on modal use BOOK ID 
+                    <div class="modal" id="test" style="visibility: visible;">
+                         button to add new annotation 
+                         <div class="add-ann-btn-container">
+                              <button class="addAnnBtn">add new annotation</button>
+                         </div>
+                         example how to show fetched annotations
+                         <div class="modal-content-wrapper">
+                              <div class="modal-content">
+                                   <div class="modal-date">
+                                        <p>created:on date</p>
+                                        <p>edited: on date</p>
+                                   </div>
+                                   <div class="modal-text">
+                                        <h6>annotation title</h6>
+                                        <p>modal text here</p>
+                                        <div class="modal-buttons-container">
+                                             <button>edit</button>
+                                             <button>delete</button>
+                                        </div>
+                                   </div>
+                              </div>      
+                         </div>
+                    </div>
+                       annotation form - modal 
+                       <div class="ann-form-container">
+                         <div class="close-modal-form">
+                              <h1 >X</h1>
+                         </div>
+                         <form action="submit" class="ann-form">
+                             <p>Title:</p>
+                              <input type="text" name="annotation-title" id="annotation-title">
+                              <p>annotation content:</p>
+                              <textarea name="annotation-content" id="annotation-content" cols="30" rows="10"></textarea>
+                              <button class="ann-form-btn">save</button>
+                         </form>
+
+                    </div> -->
+          </div>
+
+          <!-- fetching data  from GOOGLE book API-->
+
+     </div>
+
+
+     </div>
+     <footer>
+          &copy; webpage created by Nikola Balkov
+     </footer>
+
+
+
+
+
+
+
+
+
+
+     <!-- bootstrap -->
+     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script> -->
+
+
+     <!-- functions -->
+     <!-- OLD JS FILES -->
+     <!-- <script src="scripts/loadingSpinner.js"></script>
+     <script src="scripts/hashRouter.js"></script>
+     <script src="scripts/JSONserverRequests.js"></script>
+     <script src="scripts/favourites_functions.js"></script>
+     <script src="scripts/annotations_functions.js"></script>
+     <script src="scripts/GoogleAPI_functions.js"></script> -->
+     <!-- TypeScript compiled js -->
+     <script type="module" src="dist/hashRouter.js"></script>
+     <script type="module" src="dist/JSONserverRequests.js"></script>
+     <script type="module" src="dist/favourites_functions.js"></script>
+     <script type="module" src="dist/annotations_functions.js"></script>
+     <script type="module" src="dist/GoogleAPI_functions.js"></script> -->
+</body>
+
+</html>
