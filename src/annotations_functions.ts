@@ -1,14 +1,15 @@
 import { annotationEditRequest, annotationPostRequest } from "./JSONserverRequests.js";
+import { iAnnotation } from "./Interfaces/IAnnotations.js";
 
-export {createNewAnnotation};
-function createNewAnnotation(currBookID) {
+export { createNewAnnotation };
+function createNewAnnotation(currBookID:string) {
      openFormModal(currBookID);
 }
 
 // 1.If invoke openFormModal(currBookID) - open modal and create new annotation
 // 2.If invoke openFormModal(currBookID,editAnnID) - open modal and edit old annotation
-export {openFormModal};
-function openFormModal(currBookID, editAnnID) {
+export { openFormModal };
+function openFormModal(currBookID: string, editAnnID?: string|number) {
      const formContainer = document.createElement("div");
      formContainer.className = "ann-form-container";
 
@@ -47,7 +48,7 @@ function openFormModal(currBookID, editAnnID) {
 
 
      // if edit - > fetch old ann data and put it into FORM
-     let oldAnn:undefined;
+     let oldAnn: iAnnotation;
      if (editAnnID) {
           console.log(editAnnID);
           fetch(`http://localhost:3000/api/annotations/${editAnnID}`)//fet all anotations then sort by bookId
@@ -62,6 +63,8 @@ function openFormModal(currBookID, editAnnID) {
                     inputTextTitle.value = data.title;
                     textArea.value = data.content;
                     oldAnn = data;
+
+
                })
                .catch(err => {
                     console.log(err.message);
@@ -69,26 +72,26 @@ function openFormModal(currBookID, editAnnID) {
      }
      // save btn is diable if inputs are incorrect
      inputTextTitle.addEventListener("input", function () {
-          if (inputTextTitle.value.length > 2 && textArea.value.length>2) {
+          if (inputTextTitle.value.length > 2 && textArea.value.length > 2) {
                saveBtn.disabled = false;
                saveBtn.style.opacity = (1).toLocaleString();
           }
-          else{
+          else {
                saveBtn.disabled = true;
                saveBtn.style.opacity = (0.5).toString();
           }
      })
      textArea.addEventListener("input", function () {
-          if (inputTextTitle.value.length > 2 && textArea.value.length>2) {
+          if (inputTextTitle.value.length > 2 && textArea.value.length > 2) {
                saveBtn.disabled = false;
                saveBtn.style.opacity = String(1);
           }
-          else{
+          else {
                saveBtn.disabled = true;
                saveBtn.style.opacity = String(0.5);
           }
      })
-     if(inputTextTitle.value.length < 2){
+     if (inputTextTitle.value.length < 2) {
           saveBtn.disabled = true;
           saveBtn.style.opacity = String(0.5);
      }
@@ -96,14 +99,16 @@ function openFormModal(currBookID, editAnnID) {
      saveBtn.addEventListener("click", function (event) {
           event.preventDefault();
           // validating input values
-          if(inputTextTitle.value.trim().length<2 || textArea.value.trim().length<2){
+          if (inputTextTitle.value.trim().length < 2 || textArea.value.trim().length < 2) {
                alert("************************************************\n Fill out the form properly! (min 3 chars in field)")
                return;
           }
+
           const formData = new FormData(form);
           const createDate = new Date().toLocaleString();//7/21/2022, 3:14:53 PM good format
-          let annObj;
-          if (editAnnID) {
+
+          let annObj: iAnnotation;
+          if (editAnnID && (typeof oldAnn === "object")) {
                annObj = {
                     ...oldAnn,
                     "title": `${formData.get("inputTextTitle")}`,
@@ -115,6 +120,7 @@ function openFormModal(currBookID, editAnnID) {
           }
           else {
                annObj = {
+                    "id":"",     //JSON server overrides "" with real ID
                     "title": `${formData.get("inputTextTitle")}`,
                     "content": `${formData.get("annotationContentP")}`,
                     "timeOfCreation": `${createDate}`,
@@ -124,7 +130,7 @@ function openFormModal(currBookID, editAnnID) {
 
                annotationPostRequest(annObj);
           }
-          
+
           // close Form modal after save btn clicked
           formContainer.remove();
 

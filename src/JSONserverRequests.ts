@@ -3,10 +3,12 @@
 import { openFormModal } from "./annotations_functions.js";
 import { createAppendCard } from "./GoogleAPI_functions.js";
 import { addloader } from "./loadingSpinner.js";
+import { iAnnotation } from "./Interfaces/IAnnotations.js";
+import { ifavouriteBook } from "./Interfaces/IFavouriteBook.js";
 
 // favourites page JSON server BOOKs requests______________________________
-export {postRequest};
-function postRequest(book) {
+export { postRequest };
+function postRequest(book: ifavouriteBook) {
      fetch(`http://localhost:3000/api/favourites/`, {
           method: "POST",
           headers: {
@@ -40,7 +42,7 @@ function postRequest(book) {
 
 }
 
-export {getRequest};
+export { getRequest };
 function getRequest() {
      const favPage = document.getElementsByClassName("cards-container-fav")[0];
      favPage.innerHTML = "";
@@ -55,10 +57,10 @@ function getRequest() {
                     return res.json();
                }
           })
-          .then(data => {
+          .then((data: ifavouriteBook[]) => {
                // add to fav page and print
                data.reverse();
-               data.forEach(book => {
+               data.forEach((book) => {
                     createAppendCard(book, favPage)
                });
                return data;
@@ -82,8 +84,8 @@ function getRequest() {
           })
 }
 
-export {deleteRequest};
-function deleteRequest(bookID) {
+export { deleteRequest };
+function deleteRequest(bookID: string) {
      fetch(`http://localhost:3000/api/favourites/${bookID}`, {
           method: "DELETE"
      })
@@ -108,8 +110,8 @@ function deleteRequest(bookID) {
 // *********************************************************
 // annotations requests ____________________________________
 // get annotations for current book
-export {annotationGetRequest};
-function annotationGetRequest(bookID) {
+export { annotationGetRequest };
+function annotationGetRequest(bookID: string) {
      // debugger;
      fetch(`http://localhost:3000/api/annotations/`)//fet all anotations then sort by bookId
           .then(res => {
@@ -119,7 +121,7 @@ function annotationGetRequest(bookID) {
                }
                return res.json();
           })
-          .then(data => {
+          .then((data: iAnnotation[]) => {
                const currBookCollection = data.filter(annotation => {
                     if (annotation.book == bookID) {
                          return annotation;
@@ -136,7 +138,7 @@ function annotationGetRequest(bookID) {
                console.log(err.message);
           })
 
-     function createModalContentElement(currAnnObj) {
+     function createModalContentElement(currAnnObj: iAnnotation) {
           // content - title, text,date 
           const modalContent = document.createElement("div");
           modalContent.className = "modal-content";
@@ -196,8 +198,8 @@ function annotationGetRequest(bookID) {
 
 
 }
-export {annotationPostRequest};
-function annotationPostRequest(newAnnObj) {
+export { annotationPostRequest };
+function annotationPostRequest(newAnnObj: iAnnotation) {
      fetch(`http://localhost:3000/api/annotations/`, {
           method: "POST",
           headers: {
@@ -217,7 +219,7 @@ function annotationPostRequest(newAnnObj) {
                // close modal for forse fetch (get)
                const annotationsWrapper = document.getElementsByClassName(`annotationsWrapper${newAnnObj.book}`);
                const annotationsWrapperArr = [...annotationsWrapper]
-               annotationsWrapperArr.forEach(page => page!.parentElement.style.visibility = "hidden");
+               annotationsWrapperArr.forEach(page => page.parentElement!.style.visibility = "hidden");
 
                alert(`You added new annotation.`)
           })
@@ -225,8 +227,8 @@ function annotationPostRequest(newAnnObj) {
 
 }
 
-export {annotationDeleteRequest}
-function annotationDeleteRequest(annObj) {
+export { annotationDeleteRequest }
+function annotationDeleteRequest(annObj: iAnnotation) {
      fetch(`http://localhost:3000/api/annotations/${annObj.id}`, {
           method: "DELETE"
      })
@@ -243,15 +245,15 @@ function annotationDeleteRequest(annObj) {
                // parentModal.style.visibility="hidden";
                const annotationsWrapper = document.getElementsByClassName(`annotationsWrapper${annObj.book}`);
                const annotationsWrapperARR = [...annotationsWrapper]
-               annotationsWrapperARR.forEach(page => page!.parentElement.style.visibility = "hidden");
+               annotationsWrapperARR.forEach(page => page.parentElement!.style.visibility = "hidden");
                alert(`You Deleted annotation with name - "${annObj.title}".`)
           })
           .catch(err => console.log(err.message))
 
 }
 
-export {annotationEditRequest}
-function annotationEditRequest(oldAnnID, editedAnnObj) {
+export { annotationEditRequest }
+function annotationEditRequest(oldAnnID: number | string, editedAnnObj: iAnnotation) {
      fetch(`http://localhost:3000/api/annotations/${oldAnnID}`, {
           method: "PUT",
           headers: {
@@ -271,7 +273,7 @@ function annotationEditRequest(oldAnnID, editedAnnObj) {
                // get 2 wrapper - favpage and home
                const annotationsWrapper = document.getElementsByClassName(`annotationsWrapper${editedAnnObj.book}`);
                const annotationsWrapperARR = [...annotationsWrapper]
-               annotationsWrapperARR.forEach(page => page.parentElement.style.visibility = "hidden");
+               annotationsWrapperARR.forEach(page => page.parentElement!.style.visibility = "hidden");
                alert(`You edited annotation with ID: ${data.id}`);
                // currModal.style.visibility = "hidden";
           })

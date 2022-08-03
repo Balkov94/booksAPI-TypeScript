@@ -1,6 +1,7 @@
 // favourites page functions____________________________________________
 
 import { getRequest } from "./JSONserverRequests.js";
+import { ifavouriteBook } from "./Interfaces/IFavouriteBook.js";
 
 const favLink = document.getElementById("favourites-link");
 // const favPage = document.getElementsByClassName("cards-container-fav")[0];
@@ -10,13 +11,13 @@ favLink!.addEventListener("click", function () {
 
 })
 
-export {checkCardButton};
+export { checkCardButton };
 
 async function checkCardButton() {
      const allFavBtns = document.getElementsByClassName("cardFavBtn");
      try {
           const data = await fetch(`http://localhost:3000/api/favourites/`);
-          const allFavBooks = await data.json();
+          const allFavBooks: ifavouriteBook[] = await data.json();
 
           for (let i = 0; i < allFavBtns.length; i++) {
                const currBtnID = (allFavBtns[i].id).replace("favButton", "");
@@ -34,12 +35,12 @@ async function checkCardButton() {
 
 }
 
-export {closeAllModalsinPageSwitch};
+export { closeAllModalsinPageSwitch };
 function closeAllModalsinPageSwitch() {
 
      const allModalsCollection = document.getElementsByClassName("modal");
      const allModalsArr = [...allModalsCollection];
-     allModalsArr.forEach(modal  => {
+     allModalsArr.forEach(modal => {
           (<HTMLElement>modal).style.visibility = "hidden";
      });
 }

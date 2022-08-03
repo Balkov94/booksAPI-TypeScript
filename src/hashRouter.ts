@@ -1,6 +1,5 @@
 import { checkCardButton, closeAllModalsinPageSwitch } from "./favourites_functions.js";
 
-
 // * hash ruter_______________________________________________________________
 const wrapper = document.getElementById("wrapper");
 const searchContainer = document.getElementById("search-container");

@@ -97,20 +97,12 @@
       "id": 13
     },
     {
-      "title": "111",
-      "content": "111",
-      "timeOfCreation": "8/1/2022, 4:34:35 PM",
-      "timeOFEdit": "8/1/2022, 4:34:35 PM",
-      "book": "I8HU_3ycrrEC",
-      "id": 14
-    },
-    {
-      "title": "111",
-      "content": "222",
-      "timeOfCreation": "8/1/2022, 5:39:17 PM",
-      "timeOFEdit": "8/1/2022, 5:39:23 PM",
-      "book": "I8HU_3ycrrEC",
-      "id": 15
+      "id": 14,
+      "title": "123",
+      "content": "123",
+      "timeOfCreation": "8/2/2022, 6:03:32 PM",
+      "timeOFEdit": "8/2/2022, 6:03:32 PM",
+      "book": "I8HU_3ycrrEC"
     }
   ],
   "favourites": [

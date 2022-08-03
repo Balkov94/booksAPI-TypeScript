@@ -1,23 +1,23 @@
+import { createNewAnnotation } from "./annotations_functions.js";
+import { checkCardButton } from "./favourites_functions.js";
+import { annotationGetRequest, deleteRequest, postRequest } from "./JSONserverRequests.js";
 const search = <HTMLInputElement>document.getElementById("search");
 const searchBy = <HTMLInputElement>document.getElementById("searchBy");
 const searchBtn = document.getElementById("searchBtn");
 const cardsContainer = document.getElementsByClassName("cards-container")[0];
-// const cardsContainerFav = document.getElementsByClassName("cards-container-fav")[0];
-// const loader = document.getElementsByClassName("loader-container")[0];
 // pegination 
-const resultNum = document.getElementById("resultNum");
-const prevPage = document.getElementById("prevPage");
-const nextPage = document.getElementById("nextPage");
-const pageNum = document.getElementById("pageNum");
-import { createNewAnnotation } from "./annotations_functions.js";
-import { checkCardButton } from "./favourites_functions.js";
-import { annotationGetRequest, deleteRequest, postRequest } from "./JSONserverRequests.js";
+const resultNum =<HTMLInputElement> document.getElementById("resultNum");
+const prevPage = <HTMLInputElement>document.getElementById("prevPage");
+const nextPage = <HTMLInputElement>document.getElementById("nextPage");
+const pageNum = <HTMLInputElement>document.getElementById("pageNum");
+
 // add additional data to HTML element
 //1 in HTML -> data-index="some value"
 //2 in DOM get-> dataset.index => "some value"
 
 // TS MODULES
-import {addloader} from "./loadingSpinner.js"
+import { addloader } from "./loadingSpinner.js"
+import { ifavouriteBook } from "./Interfaces/IFavouriteBook.js";
 
 prevPage!.addEventListener("click", function () {
      if (!Number(pageNum!.dataset.index)) {
@@ -42,7 +42,7 @@ searchBtn!.addEventListener("click", function () {
 });
 
 search!.addEventListener("click", () => {
-     search!.innerHTML = ""; //?????????????????
+     search!.innerHTML = "";
 })
 
 
@@ -63,7 +63,7 @@ function fetchData() {
 
      //* fix searching title need "" because of ENCODING SPACE 
      if (qParam == "intitle") {
-          inputText = `\"${inputText}\"`;
+          inputText = `"${inputText}"`;
      }
      else if (inputText.includes(" ")) {
           inputText = inputText.replaceAll(" ", "-")
@@ -84,8 +84,6 @@ function fetchData() {
                for (let i = 0; i < data.items.length; i++) {
                     const currBook = data.items[i];
                     createAppendCard(currBook, cardsContainer);
-
-
                }
           })
           .then(() => {
@@ -106,19 +104,19 @@ function fetchData() {
           "${inputText.replaceAll("\"", " ").trim()}" ${searchBy.value}`;
           cardsContainer.append(notfound);
           // try add some img agter text
-          const errImg=document.createElement("img");
-          errImg.alt="Error image";
-          errImg.src="https://media0.giphy.com/media/SiMcadhDEZDm93GmTL/giphy.gif?cid=ecf05e47orkqv5ok4bpeltmux4l6n6pul7mxiglf2era8o9v&rid=giphy.gif&ct=g"
+          const errImg = document.createElement("img");
+          errImg.alt = "Error image";
+          errImg.src = "https://media0.giphy.com/media/SiMcadhDEZDm93GmTL/giphy.gif?cid=ecf05e47orkqv5ok4bpeltmux4l6n6pul7mxiglf2era8o9v&rid=giphy.gif&ct=g"
           notfound.append(errImg);
      }
 }
 
 
-export {createAppendCard};
-function createAppendCard(currBook, page) {
-     const title = currBook.volumeInfo.title;
-     let authors = currBook.volumeInfo.authors;
-     const bookID = currBook.id;
+export { createAppendCard };
+function createAppendCard(currBook: any, page: Element) {
+     const title: string = currBook.volumeInfo.title;
+     let authors: string = currBook.volumeInfo.authors;
+     const bookID: string = currBook.id;
      if (Array.isArray(authors)) {
           authors = authors.join(", ");
      }
@@ -126,8 +124,8 @@ function createAppendCard(currBook, page) {
           authors = "no infromation";
      }
 
-     const description = currBook.volumeInfo.description;
-     const year = currBook.volumeInfo.publishedDate;
+     const description: string = currBook.volumeInfo.description;
+     const year: string = currBook.volumeInfo.publishedDate;
      let bookImgSrc = currBook.volumeInfo.imageLinks;
      if (!bookImgSrc) {
           bookImgSrc = "https://storiavoce.com/wp-content/plugins/lightbox/images/No-image-found.jpg";
@@ -136,7 +134,7 @@ function createAppendCard(currBook, page) {
           bookImgSrc = currBook.volumeInfo.imageLinks["thumbnail"];
      }
 
-     const src = bookImgSrc ? bookImgSrc : "none";
+     const src: string = bookImgSrc ? bookImgSrc : "none";
 
      const cardContainer = document.createElement("div");
      cardContainer.className = "card";
@@ -167,11 +165,11 @@ function createAppendCard(currBook, page) {
      cardUl.className = "card-author-year";
      const cardYear = document.createElement("li");
      // need check for with page are the cards(bc for home are using api obj /for  fav are using my own book obj)
-     if(page.className=="cards-container-fav"){
+     if (page.className == "cards-container-fav") {
           cardYear.innerText = ("year: " + (year ? year.slice(5).trim() : "-"));
      }
-     else{
-          cardYear.innerText = ("year: " + (year ? year.slice(0,4).trim() : "-"));
+     else {
+          cardYear.innerText = ("year: " + (year ? year.slice(0, 4).trim() : "-"));
      }
 
      cardYear.id = "year" + bookID;
@@ -187,11 +185,11 @@ function createAppendCard(currBook, page) {
      // if (page.className == "cards-container") {
      // check if book is already in favourites
      // REMOVE button in fav page
-     if (page.className =="cards-container-fav") {
+     if (page.className == "cards-container-fav") {
           cardButton.className = "cardRemoveBtn";
           cardButton.innerText = "Remove";
           cardButton.id = "removeButton" + bookID;
-          cardButton.addEventListener("click",function(){
+          cardButton.addEventListener("click", function () {
                deleteRequest(`${bookID}`);
                const parent = document.getElementById(`cardContainer${(bookID)}`);
                parent!.remove();
@@ -203,15 +201,15 @@ function createAppendCard(currBook, page) {
           cardButton.className = "cardFavBtn";
           cardButton.innerText = "add to Fav";
           cardButton.id = "favButton" + bookID;
-          cardButton.addEventListener("click",function(){
+          cardButton.addEventListener("click", function () {
                const bookObjID = bookID;
-               const title = document.getElementById(`title${bookID}`).innerText;
-               const imageSrc = document.getElementById(`img${bookID}`).src;
-               const description = document.getElementById(`description${bookID}`).innerText;
-               const authors = document.getElementById(`author${bookID}`).innerText;
-               const publishedDate = document.getElementById(`year${bookID}`).innerText;
+               const title = document.getElementById(`title${bookID}`)!.innerText;
+               const imageSrc = (<HTMLImageElement>document.getElementById(`img${bookID}`))!.src;
+               const description = document.getElementById(`description${bookID}`)!.innerText;
+               const authors = document.getElementById(`author${bookID}`)!.innerText;
+               const publishedDate = document.getElementById(`year${bookID}`)!.innerText;
 
-               const bookObj = {
+               const bookObj:ifavouriteBook = {
                     id: bookObjID,
                     volumeInfo: {
                          title,
